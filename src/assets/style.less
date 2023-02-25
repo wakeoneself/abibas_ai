@@ -1,0 +1,78 @@
+// Pal
+#cl() {
+    bg: #111111;
+}
+
+//Main 
+html,
+body {
+    background: #cl[bg];
+    color: white;
+}
+
+//Knopki
+.but {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none !important;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-weight: normal;
+
+    &.clr {
+        background: linear-gradient(227deg, #D8338A 6%, #FFDF46 100%);
+        border: none;
+    }
+
+    &.disabled {
+        opacity: 0.3;
+        pointer-events: none;
+    }
+}
+
+//Input
+.cust_input {
+    border: none;
+    background: black;
+    color: white !important;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+}
+
+//App
+.generator_wrap {
+    height: 500px;
+}
+
+.logo {
+    max-width: 150px;
+    width: 100%;
+}
+
+.interface {
+    max-width: 350px;
+    height: 200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.thinker {
+    iframe {
+        pointer-events: none;
+        opacity: 0.3;
+        border-radius: 10px;
+    }
+}
+
+#think {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
