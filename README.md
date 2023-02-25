@@ -1,5 +1,5 @@
 # abibas_ai_vue
-powered by OpenAI API
+powered by OpenAI API & [ldobreira/gpt3-php](https://github.com/ldobreira/gpt3-php)
 ## Project setup
 ```
 npm install
