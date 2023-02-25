@@ -1,5 +1,5 @@
 # abibas_ai_vue
-
+powered by OpenAI API
 ## Project setup
 ```
 npm install
