@@ -20,14 +20,12 @@
                                     <button type="submit" class="but clr w-100"
                                         :class="{ disabled: !pReady }">Трави</button>
                                 </div>
-                                <!-- Mode -->
-                                <div class="form-check form-switch mt-3">
-                                    <input @change="abimode" v-model="mode" class="form-check-input" type="checkbox"
-                                        role="switch" id="flexSwitchCheckDefault">
-                                    <label class="form-check-label" for="flexSwitchCheckDefault">Включить примитивный режим
-                                        <small class="opacity-25">(работает быстрее, но тупее)</small></label>
-                                </div>
                             </form>
+                            <p style="font-size: 10px; opacity: 0.3;" class="mt-2">Конечный результат, сгенерированный нейронной сетью, является исключительно продуктом ее
+                                обучения на предоставленных данных и не отражает точку зрения создателя системы.
+                                Сгенерированные цитаты не должны рассматриваться как истинные или достоверные, и несут в
+                                себе риск быть неточными или противоречивыми. Наконец, автор не несет ответственности за
+                                любое использование информации, полученной через эту нейросеть.</p>
                         </div>
                         <!-- Think -->
                         <div class="thinker" v-else-if="abiState === 'think'" key="think"
@@ -58,7 +56,6 @@ export default {
             abiState: 'prompt',
             pReady: false,
             getgen: 'api/clever.php',
-            mode: false,
             prompt: ''
         }
     },
@@ -74,14 +71,6 @@ export default {
                 this.pReady = true
             }
         },
-        abimode() {
-            var debil = this.mode;
-            if (debil) {
-                this.getgen = 'api/stupid.php';
-            } else {
-                this.getgen = 'api/clever.php';
-            }
-        },
         generate() {
             this.abiState = 'think';
             const ask = {
@@ -94,7 +83,7 @@ export default {
             })
                 .then(response => {
                     const choices = response.data.choices;
-                    this.bazar = choices[0].text;
+                    this.bazar = choices[0].message.content;
                     this.abiState = 'result';
                     this.knopka = 'Красиво сказал брат!';
                 })
@@ -117,5 +106,4 @@ export default {
 .fade-enter-from,
 .fade-leave-to {
     opacity: 0;
-}
-</style>
+}</style>
