@@ -1,7 +1,7 @@
 # abibas_ai
 A primitive (in the literal sense of the word) neural network. Powered by OpenAI API & [ldobreira/gpt3-php (updated to support gpt-3.5-turbo)](https://github.com/ldobreira/gpt3-php)
 
-Demo: https://3glaza.com/abibas
+Demo: https://abibas.fun
 ## Project setup
 ```
 npm install
